@@ -67,6 +67,16 @@ export default function Layout({ children }: { children: ReactNode }) {
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="apple-mobile-web-app-title" content="MomHive" />
+         {/* Google tag (gtag.js) */}
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-K2LBRX5XFC"></script>
+      <script dangerouslySetInnerHTML={{
+        __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-K2LBRX5XFC');
+        `
+      }} />
       </head>
       <body
         className={cn("flex min-h-svh flex-col antialiased bg-gray-900 font-sans overflow-hidden", inter.className)}
