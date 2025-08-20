@@ -55,7 +55,7 @@ yarn dev
 pnpm dev
 \`\`\`
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
+4. Open [momhive.org](momhive.org) in your browser to see the application.
 
 ## Project Structure
 
@@ -69,7 +69,7 @@ mom-hive/
 │   └── theme-provider.tsx # Theme provider
 ├── hooks/                # Custom React hooks
 ├── lib/                  # Utility functions
-└── public/              # Static assets
+└── momhive.org           # Static assets
 \`\`\`
 
 ## Available Scripts
