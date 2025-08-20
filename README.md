@@ -1,172 +1,110 @@
-# 🤖 MomHive - AI-Powered Parenting Assistant
+# MomHive
 
-> A full-stack SaaS application providing AI-powered parenting support with subscription-based monetization and PWA capabilities.
+A Neural Parenting Assistant providing AI-powered support for modern mothers. Built with privacy-first principles, MomHive offers anonymous consultations without accounts, data collection, or judgment.
 
-**🌐 Live Demo:** [momhive.org](https://momhive.org)
+## Features
 
-![MomHive Screenshot](https://sjc.microlink.io/YA__AUcdaeUvlYiJ_RZTFRgx5TasP4uhH2004iFpPUzEJ6ZRsgCL-Z_ywXhv1S9y1-MyO7eRW9dh8HN_M6t3ew.jpeg)
+- 🤖 AI-powered parenting assistance and guidance
+- 🔒 Complete anonymity - no accounts required
+- 🌱 Eco-friendly and sustainable approach
+- 🛡️ Privacy-first - no data collection or tracking
+- 💬 Anonymous chat consultations
+- 📱 Mobile-first responsive design
+- 🌙 Dark/light mode support
+- ⚡ Fast and optimized performance
 
-## 🚀 Overview
+## Tech Stack
 
-MomHive is a modern parenting assistant that leverages OpenAI's GPT models to provide personalized, real-time support to mothers. Built with a privacy-first approach, the application offers anonymous consultations without requiring user accounts.
+- **Framework:** Next.js 14+ with App Router
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS v4
+- **UI Components:** shadcn/ui
+- **Fonts:** Geist Sans & Geist Mono
+- **Icons:** Lucide React
 
-## ✨ Key Features
-
-### 🤖 **AI-Powered Chat System**
-- **Personality Matching**: AI adapts communication style to match user's tone and energy
-- **Specialized Prompts**: Focused on parenting, nutrition, activities, and child development
-- **Real-time Streaming**: Fast, responsive chat experience using AI SDK
-- **Medical Disclaimers**: Professional safety warnings for health-related queries
-
-### 💳 **Subscription Management**
-- **Freemium Model**: 3 free consultations, then subscription required
-- **Stripe Integration**: Professional payment processing with test/live mode support
-- **Local Storage Tracking**: Simple user state management without databases
-- **Automatic Price Selection**: Environment-based pricing for test/production
-
-### 📱 **Progressive Web App (PWA)**
-- **Installable**: Users can add to home screen like native apps
-- **Offline Capable**: Works without internet connection
-- **Responsive Design**: Optimized for mobile, tablet, and desktop
-- **App-like Experience**: Full-screen mode with no browser UI
-
-### 🎨 **Modern UI/UX**
-- **Futuristic Theme**: Space-inspired design with animated elements
-- **Responsive Layout**: Tailwind CSS with custom animations
-- **Loading States**: Polished user experience with skeleton screens
-- **Error Handling**: Graceful failure management with user-friendly messages
-
-## 🛠️ Tech Stack
-
-### **Frontend**
-- **Next.js 14** - React framework with App Router
-- **TypeScript** - Type-safe development
-- **Tailwind CSS** - Utility-first styling
-- **Lucide React** - Modern icon library
-
-### **Backend**
-- **Next.js API Routes** - Serverless functions
-- **OpenAI API** - GPT-4o-mini for AI responses
-- **Stripe API** - Payment processing and subscriptions
-- **AI SDK** - Vercel's AI toolkit for streaming responses
-
-### **Deployment & Infrastructure**
-- **Vercel** - Hosting and deployment
-- **Custom Domain** - Professional branding
-- **Environment Variables** - Secure API key management
-- **SSL/HTTPS** - Automatic security certificates
-
-## 🏗️ Architecture
-
-\`\`\`
-┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
-│   Frontend      │    │   API Routes     │    │  External APIs  │
-│                 │    │                  │    │                 │
-│ • React/Next.js │◄──►│ • /api/chat      │◄──►│ • OpenAI GPT    │
-│ • TypeScript    │    │ • /api/checkout  │    │ • Stripe        │
-│ • Tailwind CSS  │    │ • /api/webhook   │    │                 │
-│ • PWA Manifest  │    │                  │    │                 │
-└─────────────────┘    └──────────────────┘    └─────────────────┘
-\`\`\`
-
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
-- Node.js 18+
-- npm or yarn
-- OpenAI API key
-- Stripe account (test/live keys)
+
+- Node.js 18+ 
+- npm, yarn, or pnpm
 
 ### Installation
 
-1. **Clone the repository**
-   \`\`\`bash
-   git clone https://github.com/yourusername/momhive-ai-assistant.git
-   cd momhive-ai-assistant
-   \`\`\`
+1. Clone the repository:
+\`\`\`bash
+git clone https://github.com/yourusername/mom-hive.git
+cd mom-hive
+\`\`\`
 
-2. **Install dependencies**
-   \`\`\`bash
-   npm install
-   \`\`\`
+2. Install dependencies:
+\`\`\`bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+\`\`\`
 
-3. **Set up environment variables**
-   \`\`\`bash
-   cp .env.example .env.local
-   \`\`\`
-   
-   Add your API keys:
-   \`\`\`env
-   OPENAI_API_KEY=your_openai_key
-   STRIPE_SECRET_KEY=your_stripe_secret_key
-   NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=your_stripe_publishable_key
-   STRIPE_PRICE_ID_TEST=your_test_price_id
-   STRIPE_PRICE_ID_LIVE=your_live_price_id
-   \`\`\`
+3. Run the development server:
+\`\`\`bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+\`\`\`
 
-4. **Run the development server**
-   \`\`\`bash
-   npm run dev
-   \`\`\`
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 
-5. **Open [http://localhost:3000](http://localhost:3000)**
+## Project Structure
 
-## 💼 Business Model
+\`\`\`
+mom-hive/
+├── app/                    # Next.js app directory
+│   ├── globals.css        # Global styles
+│   └── layout.tsx         # Root layout
+├── components/            # Reusable components
+│   ├── ui/               # shadcn/ui components
+│   └── theme-provider.tsx # Theme provider
+├── hooks/                # Custom React hooks
+├── lib/                  # Utility functions
+└── public/              # Static assets
+\`\`\`
 
-- **Freemium Approach**: 3 free AI consultations per user
-- **Subscription Pricing**: $20/month for unlimited access
-- **Privacy-First**: No user accounts required, anonymous usage
-- **Direct Monetization**: No app store fees, 100% revenue retention
+## Available Scripts
 
-## 🎯 Key Achievements
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
 
-- ✅ **Full-Stack Development**: Complete product from concept to deployment
-- ✅ **AI Integration**: Advanced prompt engineering and response streaming
-- ✅ **Payment Processing**: Secure subscription management with Stripe
-- ✅ **PWA Implementation**: Native app experience without app stores
-- ✅ **Responsive Design**: Optimized for all device types
-- ✅ **Production Deployment**: Live application with custom domain
+## About MomHive
 
-## 📊 Technical Highlights
+MomHive is designed to support mothers through AI-powered consultations while maintaining complete privacy and anonymity. Our platform offers:
 
-### **AI Implementation**
-- Custom system prompts for parenting-specific responses
-- Personality matching algorithm that adapts to user communication style
-- Streaming responses for real-time chat experience
-- Error handling and fallback mechanisms
+- **3 Free Consultations** - Get started with no commitment
+- **No Account Required** - Jump straight into getting help
+- **Complete Anonymity** - Your privacy is our priority
+- **Eco-Friendly** - Sustainable technology for a better future
+- **No Judgment Zone** - Safe space for all parenting questions
 
-### **Payment Integration**
-- Stripe Checkout Sessions for secure payment processing
-- Webhook handling for subscription lifecycle management
-- Environment-based price selection (test/live modes)
-- Local storage for subscription state management
+## Contributing
 
-### **PWA Features**
-- Web App Manifest for installability
-- Service worker for offline functionality
-- App-like navigation and user experience
-- Cross-platform compatibility
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-## 🔮 Future Enhancements
-
-- [ ] Push notifications for user re-engagement
-- [ ] Offline chat history storage
-- [ ] Multi-language support
-- [ ] Advanced analytics dashboard
-- [ ] Integration with parenting resources and tools
-
-## 📝 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🤝 Contact
+## Support
 
-**Your Name** - [your.email@example.com](mailto:your.email@example.com)
-
-**Project Link:** [https://github.com/yourusername/momhive-ai-assistant](https://github.com/yourusername/momhive-ai-assistant)
-
-**Live Demo:** [https://momhive.org](https://momhive.org)
+For questions about using MomHive or technical issues, please open an issue or contact the maintainers.
 
 ---
 
-*Built with ❤️ for modern mothers everywhere*
+Built with ❤️ to support mothers everywhere through AI-powered assistance
