@@ -11,11 +11,11 @@ const orbitron = Orbitron({
 })
 
 export const metadata = {
-  title: "MomHive - Neural Parenting Assistant",
+  title: "BeeMomHive - Neural Parenting Assistant",
   description:
     "Advanced AI-powered parenting assistant for the modern mother. Harness the power of artificial intelligence for expert guidance.",
   keywords: "AI parenting, neural assistant, futuristic mom help, advanced childcare, AI motherhood",
-  authors: [{ name: "MomHive Neural Systems" }],
+  authors: [{ name: "BeeMomHive Neural Systems" }],
   manifest: "/manifest.json",
   icons: {
     icon: [{ url: "/favicon.ico" }, { url: "/images/momhive-logo.png", sizes: "32x32", type: "image/png" }],
@@ -24,10 +24,10 @@ export const metadata = {
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
-    title: "MomHive",
+    title: "BeeMomHive",
   },
   openGraph: {
-    title: "MomHive - Neural Parenting Assistant",
+    title: "BeeMomHive - Neural Parenting Assistant",
     description: "Advanced AI assistant for futuristic parenting",
     type: "website",
     images: [
@@ -35,13 +35,13 @@ export const metadata = {
         url: "/images/momhive-logo.png",
         width: 1200,
         height: 630,
-        alt: "MomHive - Neural Parenting Assistant",
+        alt: "BeeMomHive - Neural Parenting Assistant",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "MomHive - Neural Parenting Assistant",
+    title: "BeeMomHive - Neural Parenting Assistant",
     description: "Advanced AI assistant for futuristic parenting",
     images: ["/images/momhive-logo.png"],
   },
