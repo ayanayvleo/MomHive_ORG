@@ -25,7 +25,7 @@ export function SiteHeader({ showHomeButton = false, onHomeClick }: SiteHeaderPr
           <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-400 rounded-lg blur-sm opacity-50 group-hover:opacity-70 transition-opacity"></div>
           <Image
             src="/images/momhive-logo.png"
-            alt="MomHive Logo"
+            alt="BeeMomHive Logo"
             width={40}
             height={40}
             className="relative z-10 drop-shadow-lg"
@@ -33,7 +33,7 @@ export function SiteHeader({ showHomeButton = false, onHomeClick }: SiteHeaderPr
         </div>
         <div className="hidden sm:block">
           <h1 className="text-xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-            MomHive
+            BeeMomHive
           </h1>
           <p className="text-xs text-purple-300/70">Neural Assistant</p>
         </div>
