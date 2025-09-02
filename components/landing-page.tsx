@@ -27,7 +27,7 @@ export function LandingPage({ onEnter }: LandingPageProps) {
           <Image src="/images/momhive-logo.png" alt="MomHive" width={60} height={60} className="drop-shadow-lg" />
           <div>
             <h1 className="text-4xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
-              MomHive
+              BeeMomHive
             </h1>
             <p className="text-purple-200 text-sm">Neural Parenting Assistant</p>
           </div>
@@ -47,7 +47,7 @@ export function LandingPage({ onEnter }: LandingPageProps) {
           </div>
 
           <p className="text-gray-300 text-lg leading-relaxed">
-            At MomHive, we protect both the environment and your privacy. No accounts, no data collection, no judgment -
+            At BeeMomHive, we protect both the environment and your privacy. No accounts, no data collection, no judgment -
             just anonymous AI support for modern mothers.
           </p>
 
