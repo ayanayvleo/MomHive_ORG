@@ -8,7 +8,7 @@ import Image from "next/image"
 import { cn } from "@/lib/utils"
 import { TooltipProvider } from "@/components/ui/tooltip"
 
-import { useChat } from "ai/react"
+import { useChat } from "ai"
 import { useSubscription } from "@/hooks/use-subscription"
 
 import { ArrowUpIcon, SparklesIcon, Zap, Brain, Rocket, Home } from "lucide-react"
