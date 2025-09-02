@@ -1,3 +1,6 @@
+"use client";
+import React from "react";
+
 export default function PrivacyPage() {
   return (
     <div className="max-w-3xl mx-auto p-6 text-gray-200">
