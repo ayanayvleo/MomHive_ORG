@@ -1,4 +1,4 @@
-# MomHive
+# BeeMomHive
 
 A Neural Parenting Assistant providing AI-powered support for modern mothers. Built with privacy-first principles, MomHive offers anonymous consultations without accounts, data collection, or judgment.
 
