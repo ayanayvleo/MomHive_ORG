@@ -1,14 +1,6 @@
 import { cn } from "@/lib/utils"
 import { TooltipProvider } from "@/components/ui/tooltip"
-import { Inter, Orbitron } from "next/font/google"
 import type { ReactNode } from "react"
-
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
-const orbitron = Orbitron({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
-  variable: "--font-orbitron",
-})
 
 export const metadata = {
   title: "BeeMomHive - Neural Parenting Assistant",
@@ -57,7 +49,7 @@ export const metadata = {
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${orbitron.variable}`}>
+    <html lang="en" className="font-sans">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/images/momhive-logo.png" type="image/png" />
@@ -79,7 +71,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       }} />
       </head>
       <body
-        className={cn("flex min-h-svh flex-col antialiased bg-gray-900 font-sans overflow-hidden", inter.className)}
+        className={cn("flex min-h-svh flex-col antialiased bg-gray-900 font-sans overflow-hidden")}
       >
         <TooltipProvider delayDuration={0}>{children}</TooltipProvider>
       </body>

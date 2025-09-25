@@ -1,10 +1,14 @@
 import { type NextRequest, NextResponse } from "next/server"
 import Stripe from "stripe"
 
-const stripeSecret = process.env.STRIPE_SECRET_KEY!
-const stripe = new Stripe(stripeSecret, { apiVersion: "2024-06-20" })
+const stripeSecret = process.env.STRIPE_SECRET_KEY
+const stripe = stripeSecret ? new Stripe(stripeSecret, { apiVersion: "2024-06-20" }) : null
 
 export async function POST(req: NextRequest) {
+  if (!stripe || !stripeSecret) {
+    return NextResponse.json({ error: "Stripe configuration missing" }, { status: 500 })
+  }
+
   try {
     const { origin } = req.nextUrl
 
