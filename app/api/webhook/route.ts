@@ -1,13 +1,18 @@
 import { type NextRequest, NextResponse } from "next/server"
 import Stripe from "stripe"
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
+// Only initialize Stripe if the key is available
+const stripe = process.env.STRIPE_SECRET_KEY ? new Stripe(process.env.STRIPE_SECRET_KEY, {
   apiVersion: "2024-06-20",
-})
+}) : null
 
-const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET!
+const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET
 
 export async function POST(req: NextRequest) {
+  if (!stripe || !webhookSecret) {
+    return NextResponse.json({ error: "Stripe configuration missing" }, { status: 500 })
+  }
+
   try {
     const body = await req.text()
     const signature = req.headers.get("stripe-signature")!
