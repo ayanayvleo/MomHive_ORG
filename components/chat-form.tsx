@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useSearchParams } from "next/navigation"
 import Image from "next/image"
 
@@ -22,12 +22,17 @@ export function ChatForm({ className, ...props }: React.ComponentProps<"form">) 
   const searchParams = useSearchParams()
   const subscription = useSubscription()
 
-  const { messages, input, setInput, append, error, isLoading } = useChat({
+  const chatResult = useChat({
     api: "/api/chat",
     onError: (error) => {
       console.error("Chat error:", error)
     },
   })
+
+  const { messages, sendMessage, error, isLoading } = chatResult
+  
+  // Create local state for input since this version doesn't provide it
+  const [input, setInput] = useState("")
 
   // Handle payment success
   useEffect(() => {
@@ -40,14 +45,14 @@ export function ChatForm({ className, ...props }: React.ComponentProps<"form">) 
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    if (!input.trim() || !subscription.canChat) return
+    if (!input?.trim() || !subscription.canChat) return
 
     // Increment chat count for non-subscribers
     if (!subscription.isSubscribed) {
       subscription.incrementChatCount()
     }
 
-    void append({ content: input, role: "user" })
+    sendMessage({ text: input })
     setInput("")
   }
 
@@ -352,7 +357,7 @@ export function ChatForm({ className, ...props }: React.ComponentProps<"form">) 
               <TooltipTrigger asChild>
                 <Button
                   type="submit"
-                  disabled={!input.trim() || isLoading || !subscription.canChat}
+                  disabled={!input?.trim() || isLoading || !subscription.canChat}
                   className="h-10 w-10 rounded-xl bg-gradient-to-r from-purple-600 via-pink-500 to-cyan-500 text-white hover:from-purple-500 hover:via-pink-400 hover:to-cyan-400 shadow-lg shadow-purple-500/50 hover:shadow-xl hover:shadow-purple-400/60 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex-shrink-0"
                 >
                   <ArrowUpIcon size={18} />
